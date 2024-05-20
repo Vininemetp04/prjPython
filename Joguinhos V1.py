@@ -1,4 +1,6 @@
 import random
+import os
+import time
 
 class Characther:
     def __init__(self, name, typepower, power, arpon, type, tesouro=None):
@@ -60,7 +62,7 @@ type = [
     "Paladino",
     "Feiticeiro",
     "Bardo"]
-def tesouro():
+
 tesouros = [
     "Pote de ouro",
     "Grimório antigo com feitiços raros",
@@ -84,5 +86,27 @@ tesouros = [
     "Cajado da ressurreição"
 ]
 
-player = Player
+player_name = input("Digite o nome do jogador:")
+player_typepower = input(f"Selecione entre os poderes da lista abaixo: {list_power}")
+player_type = input(f"Qual tipo de personagem você é:{type}")
+player_arpon = input(f"Que tipo de arma o seu personagem usa:{list_arpon}")
+player_begin = input("Bem-vindo ao jogo!")
 
+def limpar_terminal():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+limpar_terminal()
+
+atraso = 5
+time.sleep(atraso)
+print(f"O mundo era feliz com reinado de Aric IV, você é um simples {player_type}, apenas servindo ao seu reino, um dia triste, o rei misteriosamente e o mago Merlin, seu grande amigo, te  chama para ir atrás do Rei")
+time.sleep(atraso)
+print("Merlim: Meu caro amigo, vamos atrás do rei, ele sumiu misteriosamente e agora o reino está sob o comando de Marlec, seu irmão.")
+time.sleep(atraso)
+print(f"{player_name}: Merlim, eu sou um mero {player_type}, como posso ajudar um rei?")
+time.sleep(atraso)
+limpar_terminal()
+
+print("Inicio")
+time.sleep(atraso)
+limpar_terminal()

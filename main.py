@@ -1,5 +1,8 @@
+import part1
+
 def main():
-    print("opa")
+    pl = part1.Characther()
+    pl.charactherCreator()
 
 if __name__ == "__main__":
     main()

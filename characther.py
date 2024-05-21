@@ -45,7 +45,9 @@ class Characther:
         main.cls()
 
         match self.type:
-            case 1 | 8:
+            case 1:
+                self.cl = 'cyan'
+            case 8:
                 self.cl = 'purple'
             case 3:
                 self.cl = 'gray'
@@ -62,7 +64,7 @@ class Characther:
         
 
 list_power = [
-    main.textColor('Magia', 'purple'),
+    main.textColor('Magia', 'cyan'),
     'Físico', 
     main.textColor('Psiquicos', 'purple'), 
     main.textColor('Natural', 'green'), 
@@ -118,7 +120,7 @@ list_arpon = [
 ]
 pltype_list = [
     "Guerreiro",
-    main.textColor('Mago', 'purple'),
+    main.textColor('Mago', 'cyan'),
     "Arqueiro",
     main.textColor('Ladino', 'gray'),
     main.textColor('Clerigo', 'red'),

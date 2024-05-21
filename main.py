@@ -3,14 +3,15 @@ import characther as CH
 import p1
 
 listColors = {
-    'white': '\033[0;0;0m',
+    'title': '\033[1;97m',
+    'white': '\033[0m',
     'red': '\033[0;31m',
     'green': '\033[0;32m',
     'yellow': '\033[0;33m',
     'blue': '\033[0;34m',
     'purple': '\033[0;35m',
     'cyan': '\033[0;36m',
-    'gray': '\033[1;37;40m'
+    'gray': '\033[1;37m'
 }
 
 def textColor(text, color):
@@ -24,10 +25,8 @@ def readSave():
     dado = save.read().split('!@#@!')
     pl = CH.Characther()
     pl.charactherCreatorFormSave(dado)
-    print(f'{dado[7]} ||| size {len(dado)} ||| {type(dado[7])} == 0 ={type(0)}')
     print(f'Bem-vindo de volta {pl.showName()}')
     if int(dado[7]) == 0:
-        print('pao')
         p1.start(pl)
 
 def main():

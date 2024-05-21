@@ -4,9 +4,9 @@ from sys import stdout
 
 ATRASO = 1.2
 
-def digita(txt, txt1):
-    print(txt, end='')
-    for i in txt1:
+def digita(pers, txt):
+    print(pers, end='')
+    for i in txt:
         print(i, end="")
         stdout.flush()
         time.sleep(.02)
@@ -22,6 +22,6 @@ def start(pl):
     
     main.cls()
 
-    print("Inicio")
+    print(main.textColor('Inicio', 'title'))
     time.sleep(ATRASO)
     main.cls()

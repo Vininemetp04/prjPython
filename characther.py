@@ -29,12 +29,6 @@ class Characther:
         self.arpon = input(f"Que tipo de arma o seu personagem usa:")
         main.cls()
         self.begin = input("Bem-vindo ao jogo!")
-    
-    def showCharacther(self):
-        print(f"""
-            Nome: {self.name}
-            Classe: {self.type}
-        """)
 
 list_power = ['Magia', 'Físico', 'Psiquicos', 'Natural', 'Sombrio', 'Divinos']
 list_typepowermagic = [

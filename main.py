@@ -1,5 +1,5 @@
-import random
+def main():
+    pass
 
-class Characther:
-    def __init__(self, name, 
-        
+if __name__ == "__main__":
+    main()

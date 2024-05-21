@@ -1,5 +1,5 @@
 def main():
-    pass
+    print("opa")
 
 if __name__ == "__main__":
     main()

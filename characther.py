@@ -1,6 +1,4 @@
 import main
-import random
-import time
 
 def showList(lista):
     for i in range(0, len(lista)):
@@ -14,23 +12,51 @@ class Characther:
         self.arpon = 0
         self.type = 0
         self.tesouro = None
+        self.cl = 'white'
+
+    def showType(self):
+        return main.textColor(pltype_list[self.type], self.cl)
+
+    def showName(self):
+        return main.textColor(self.name, self.cl)
 
     def charactherCreator(self):
         main.cls()
         self.name = input("Digite o nome do jogador:")
         main.cls()
         showList(list_power)
-        self.typepower = input(f"Selecione entre os poderes da lista: ")
+        self.typepower = int(input(f"Selecione entre os poderes da lista: "))
         main.cls()
         showList(pltype_list)
-        self.type = input(f"Qual tipo de personagem você é:")
+        self.type = int(input(f"Qual tipo de personagem você é:"))
         main.cls()
         showList(list_arpon)
-        self.arpon = input(f"Que tipo de arma o seu personagem usa:")
+        self.arpon = int(input(f"Que tipo de arma o seu personagem usa:"))
         main.cls()
-        self.begin = input("Bem-vindo ao jogo!")
 
-list_power = ['Magia', 'Físico', 'Psiquicos', 'Natural', 'Sombrio', 'Divinos']
+        match self.type:
+            case 1 | 8:
+                self.cl = 'purple'
+            case 3:
+                self.cl = 'gray'
+            case 4 | 5:
+                self.cl = 'red'
+            case 6:
+                self.cl = 'green'
+            case _:
+                self.cl = 'white'
+
+        self.begin = input(f"Olá {self.showName()} o {self.showType()} seja bem-vindo ao jogo!")
+        
+
+list_power = [
+    main.textColor('Magia', 'purple'),
+    'Físico', 
+    main.textColor('Psiquicos', 'purple'), 
+    main.textColor('Natural', 'green'), 
+    main.textColor('Sombrio', 'gray'), 
+    main.textColor('Divinos', 'yellow')
+]
 list_typepowermagic = [
     'Bola de Fogo: Lança uma bola de fogo que explode ao atingir o alvo, causando dano em área.'
     'Cura Divina: Restaura uma quantidade significativa de pontos de vida a um aliado.',
@@ -80,15 +106,16 @@ list_arpon = [
 ]
 pltype_list = [
     "Guerreiro",
-    "Mago",
+    main.textColor('Mago', 'purple'),
     "Arqueiro",
-    "Ladino",
-    "Clerigo",
-    "Bárbaro",
-    "Druida",
+    main.textColor('Ladino', 'gray'),
+    main.textColor('Clerigo', 'red'),
+    main.textColor('Bárbaro', 'red'),
+    main.textColor('Druida', 'green'),
     "Paladino",
-    "Feiticeiro",
-    "Bardo"]
+    main.textColor('Feiticeiro', 'purple'),
+    "Bardo"
+]
 tesouros = [
     "Pote de ouro",
     "Grimório antigo com feitiços raros",
@@ -111,17 +138,3 @@ tesouros = [
     "Frasco de fogo alquímico",
     "Cajado da ressurreição"
 ]
-
-# atraso = 5
-# time.sleep(atraso)
-# print(f"O mundo era feliz com reinado de Aric IV, você é um simples {player.type}, apenas servindo ao seu reino, um dia triste, o rei misteriosamente e o mago Merlin, seu grande amigo, te  chama para ir atrás do Rei")
-# time.sleep(atraso)
-# print("Merlim: Meu caro amigo, vamos atrás do rei, ele sumiu misteriosamente e agora o reino está sob o comando de Marlec, seu irmão.")
-# time.sleep(atraso)
-# print(f"{player.name}: Merlim, eu sou um mero {player.type}, como posso ajudar um rei?")
-# time.sleep(atraso)
-# limpar_terminal()
-
-# print("Inicio")
-# time.sleep(atraso)
-# limpar_terminal()

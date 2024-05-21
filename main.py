@@ -19,10 +19,32 @@ def textColor(text, color):
 def cls():
     os.system("cls" if os.name == "nt" else "clear")
 
-def main():
+def readSave():
+    save = open('save','r')
+    dado = save.read().split('!@#@!')
     pl = CH.Characther()
-    pl.charactherCreator()
-    p1.start(pl)
+    pl.charactherCreatorFormSave(dado)
+    print(f'{dado[7]} ||| size {len(dado)} ||| {type(dado[7])} == 0 ={type(0)}')
+    print(f'Bem-vindo de volta {pl.showName()}')
+    if int(dado[7]) == 0:
+        print('pao')
+        p1.start(pl)
+
+def main():
+    cls()
+    if os.path.isfile('./save'):
+        c = int(input('[ 0 ] Não\n[ 1 ] Sim\nDeseja continuar da onde seu save? '))
+        if c != 0:
+            readSave()
+        else:
+            os.remove('./save')
+            pl = CH.Characther()
+            pl.charactherCreator()
+            p1.start(pl)
+    else:    
+        pl = CH.Characther()
+        pl.charactherCreator()
+        p1.start(pl)
 
 if __name__ == "__main__":
     main()

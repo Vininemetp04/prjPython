@@ -20,6 +20,16 @@ class Characther:
     def showName(self):
         return main.textColor(self.name, self.cl)
 
+    def charactherCreatorFormSave(self, dados):
+        # 0 name| 1 typepower | 2 power | 3 arpon | 4 type | 5 tesouro | 6 cl
+        self.name = dados[0]
+        self.typepower = int(dados[1])
+        self.power = int(dados[2])
+        self.arpon = int(dados[3])
+        self.type = int(dados[4])
+        self.tesouro = dados[5]
+        self.cl = dados[6]
+
     def charactherCreator(self):
         main.cls()
         self.name = input("Digite o nome do jogador:")
@@ -47,6 +57,8 @@ class Characther:
                 self.cl = 'white'
 
         self.begin = input(f"Olá {self.showName()} o {self.showType()} seja bem-vindo ao jogo!")
+        save = open('./save', 'x')
+        save.write(f"{self.name}!@#@!{self.typepower}!@#@!{self.power}!@#@!{self.arpon}!@#@!{self.type}!@#@!{self.tesouro}!@#@!{self.cl}!@#@!0")
         
 
 list_power = [

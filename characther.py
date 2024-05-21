@@ -1,10 +1,6 @@
+import main
 import random
-import os
 import time
-
-def limpar_terminal():
-    os.system('cls' if os.name == 'nt' else 'clear')
-
 
 def showList(lista):
     for i in range(0, len(lista)):
@@ -20,18 +16,25 @@ class Characther:
         self.tesouro = None
 
     def charactherCreator(self):
+        main.cls()
         self.name = input("Digite o nome do jogador:")
-        limpar_terminal()
+        main.cls()
         showList(list_power)
         self.typepower = input(f"Selecione entre os poderes da lista: ")
-        limpar_terminal()
+        main.cls()
         showList(pltype_list)
         self.type = input(f"Qual tipo de personagem você é:")
-        limpar_terminal()
+        main.cls()
         showList(list_arpon)
         self.arpon = input(f"Que tipo de arma o seu personagem usa:")
-        limpar_terminal()
+        main.cls()
         self.begin = input("Bem-vindo ao jogo!")
+    
+    def showCharacther(self):
+        print(f"""
+            Nome: {self.name}
+            Classe: {self.type}
+        """)
 
 list_power = ['Magia', 'Físico', 'Psiquicos', 'Natural', 'Sombrio', 'Divinos']
 list_typepowermagic = [
@@ -114,14 +117,6 @@ tesouros = [
     "Frasco de fogo alquímico",
     "Cajado da ressurreição"
 ]
-
-# player_name = input("Digite o nome do jogador:")
-# player_typepower = input(f"Selecione entre os poderes da lista abaixo: {list_power}")
-# player_type = input(f"Qual tipo de personagem você é:{pltype_liste}")
-# player_arpon = input(f"Que tipo de arma o seu personagem usa:{list_arpon}")
-# player_begin = input("Bem-vindo ao jogo!")
-
-# limpar_terminal()
 
 # atraso = 5
 # time.sleep(atraso)

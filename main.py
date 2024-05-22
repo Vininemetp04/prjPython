@@ -1,24 +1,7 @@
-import os
+import os, p1, funcs
 import characther as CH
-import p1
-
-listColors = {
-    'title': '\033[1;97m',
-    'white': '\033[0m',
-    'red': '\033[0;31m',
-    'green': '\033[0;32m',
-    'yellow': '\033[0;33m',
-    'blue': '\033[0;34m',
-    'purple': '\033[0;35m',
-    'cyan': '\033[0;36m',
-    'gray': '\033[1;37m'
-}
-
-def textColor(text, color):
-    return f'{listColors[color]}{text}{listColors["white"]}'
-
-def cls():
-    os.system("cls" if os.name == "nt" else "clear")
+import cursor as CUR
+CUR.hide()
 
 def readSave():
     save = open('save','r')
@@ -30,12 +13,16 @@ def readSave():
         p1.start(pl)
 
 def main():
-    cls()
+    funcs.cls()
+    CUR.show()
     if os.path.isfile('./save'):
         c = int(input('[ 0 ] Não\n[ 1 ] Sim\nDeseja continuar da onde seu save? '))
+        CUR.hide()
         if c != 0:
+            funcs.cls()
             readSave()
         else:
+            funcs.cls()
             os.remove('./save')
             pl = CH.Characther()
             pl.charactherCreator()
@@ -43,7 +30,9 @@ def main():
     else:    
         pl = CH.Characther()
         pl.charactherCreator()
+        CUR.hide()
         p1.start(pl)
 
 if __name__ == "__main__":
     main()
+    CUR.show()

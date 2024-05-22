@@ -1,4 +1,4 @@
-import main
+import funcs as FN
 
 def showList(lista):
     for i in range(0, len(lista)):
@@ -15,10 +15,10 @@ class Characther:
         self.cl = 'white'
 
     def showType(self):
-        return main.textColor(pltype_list[self.type], self.cl)
+        return pltype_list[self.type]
 
     def showName(self):
-        return main.textColor(self.name, self.cl)
+        return FN.textColor(self.name, self.cl)
 
     def charactherCreatorFormSave(self, dados):
         # 0 name| 1 typepower | 2 power | 3 arpon | 4 type | 5 tesouro | 6 cl
@@ -31,18 +31,18 @@ class Characther:
         self.cl = dados[6]
 
     def charactherCreator(self):
-        main.cls()
+        FN.cls()
         self.name = input("Digite o nome do jogador:")
-        main.cls()
+        FN.cls()
         showList(list_power)
         self.typepower = int(input(f"Selecione entre os poderes da lista: "))
-        main.cls()
+        FN.cls()
         showList(pltype_list)
         self.type = int(input(f"Qual tipo de personagem você é:"))
-        main.cls()
+        FN.cls()
         showList(list_arpon)
         self.arpon = int(input(f"Que tipo de arma o seu personagem usa:"))
-        main.cls()
+        FN.cls()
 
         match self.type:
             case 1:
@@ -64,12 +64,12 @@ class Characther:
         
 
 list_power = [
-    main.textColor('Magia', 'cyan'),
+    FN.textColor('Magia', 'cyan'),
     'Físico', 
-    main.textColor('Psiquicos', 'purple'), 
-    main.textColor('Natural', 'green'), 
-    main.textColor('Sombrio', 'gray'), 
-    main.textColor('Divinos', 'yellow')
+    FN.textColor('Psiquicos', 'purple'), 
+    FN.textColor('Natural', 'green'), 
+    FN.textColor('Sombrio', 'gray'), 
+    FN.textColor('Divinos', 'yellow')
 ]
 list_typepowermagic = [
     'Bola de Fogo: Lança uma bola de fogo que explode ao atingir o alvo, causando dano em área.'
@@ -120,14 +120,14 @@ list_arpon = [
 ]
 pltype_list = [
     "Guerreiro",
-    main.textColor('Mago', 'cyan'),
+    FN.textColor('Mago', 'cyan'),
     "Arqueiro",
-    main.textColor('Ladino', 'gray'),
-    main.textColor('Clerigo', 'red'),
-    main.textColor('Bárbaro', 'red'),
-    main.textColor('Druida', 'green'),
+    FN.textColor('Ladino', 'gray'),
+    FN.textColor('Clerigo', 'red'),
+    FN.textColor('Bárbaro', 'red'),
+    FN.textColor('Druida', 'green'),
     "Paladino",
-    main.textColor('Feiticeiro', 'purple'),
+    FN.textColor('Feiticeiro', 'purple'),
     "Bardo"
 ]
 tesouros = [

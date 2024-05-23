@@ -1,16 +1,7 @@
 import time
-from sys import stdout
 import funcs as FN 
 
 ATRASO = 1.2
-
-def digita(pers, txt):
-    print(pers, end='')
-    for i in txt:
-        print(i, end="")
-        stdout.flush()
-        time.sleep(.02)
-    input()
 
 def start(pl):
     time.sleep(ATRASO)  

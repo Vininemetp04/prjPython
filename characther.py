@@ -1,5 +1,6 @@
 import funcs as FN
 import menu as MN
+import time
 
 def showList(lista):
     for i in range(0, len(lista)):
@@ -34,24 +35,24 @@ class Characther:
     def charactherCreator(self):
         FN.cls()
         print('Crie seu personagem')
-        self.name = input("Digite o nome do jogador:")
+        self.name = input("Digite o nome do jogador:").strip()
         
         FN.cls()
         mn = MN.menu(list_power, 2, 2)
         mn.draw()
-        MN.wait('space')
+        mn.wait()
         self.typepower = mn.ans
         
         FN.cls()
         mn1 = MN.menu(pltype_list, 2, 2)
         mn1.draw()
-        MN.wait('space')
+        mn1.wait()
         self.type = mn1.ans
         
         FN.cls()
         mn2 = MN.menu(list_arpon, 2, 2)
         mn2.draw()
-        MN.wait('space')
+        mn2.wait()
         self.arpon = mn2.ans
         
         FN.cls()
@@ -70,7 +71,8 @@ class Characther:
             case _:
                 self.cl = 'white'
 
-        self.begin = input(f"Olá {self.showName()} o {self.showType()} seja bem-vindo ao jogo!")
+        print(f"Olá {self.showName()} o {self.showType()} seja bem-vindo ao jogo!")
+        time.sleep(1)
         save = open('./save', 'x')
         save.write(f"{self.name}!@#@!{self.typepower}!@#@!{self.power}!@#@!{self.arpon}!@#@!{self.type}!@#@!{self.tesouro}!@#@!{self.cl}!@#@!0")
         

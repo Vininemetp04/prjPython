@@ -1,10 +1,10 @@
 import keyboard as KB
 import funcs as FN
 
-wait = KB.wait
-
 class menu:
+
     def __init__(self, text, x, y):
+        self.CONFIRMA = 'space'
         self.x = x
         self.y = y
         self.text = text
@@ -17,7 +17,10 @@ class menu:
         self.select = 0
         KB.add_hotkey("up arrow", self.__up)
         KB.add_hotkey("down arrow", self.__down)
-        KB.add_hotkey('space', self.__setAns)
+        KB.add_hotkey(self.CONFIRMA, self.__setAns)
+
+    def wait(self): 
+        KB.wait(self.CONFIRMA)
 
     def __rmColorCode(self, p):
         if len(p.split('\033')) > 1:

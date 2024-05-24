@@ -20,7 +20,7 @@ def main():
         CUR.hide()
         mn = MN.menu(['Continuar save', 'Recomeçar'], 2, 2)
         mn.draw()
-        MN.wait('enter')
+        mn.wait()
         if mn.ans == 0:
             funcs.cls()
             readSave()

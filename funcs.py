@@ -69,7 +69,7 @@ def drawFrame(x, y, w, h, prt1=0, dl=.02):
 
 def nextDl():
     prtXY('\/ ║', TERM[0]-3, TERM[1]-1)
-    KB.wait('enter')
+    KB.wait('space')
 
 def write(q, f, cln=0):
     q = "| "+q+' |'

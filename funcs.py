@@ -1,5 +1,4 @@
-import os, sys
-import time
+import os, sys, time, keyboard as KB
 
 TERM = os.get_terminal_size() # [coll(w), lines(h)] 
 
@@ -15,26 +14,13 @@ listColors = {
     'gray': '\033[1;37m'
 }
   
-def strToPrtXYDl(str):
-    arr = str.split("\033")
-    cor = []
-    arrCor = []
-    for i in range(1, len(arr)):
-        cor.append(f'\033{arr[i][0:6]}')
-        arr[i] = arr[i][6:]
-    for a in range(0, len(arr)):
-        arrCor.append(arr[a])
-        if a < len(cor):
-            arrCor.append(cor[a])
-    return arrCor
-
 def prtXY(text, x=0, y=0):
     sys.stdout.write("\033[{};{}H".format(y, x))
     sys.stdout.write("\033[K")
     sys.stdout.write(text)
     sys.stdout.flush()
 
-def prtXYDl(text, x=0, y=0):
+def wirteOnBox(text, x=0, y=0):
     l = 0
     safeX = x
     safeY = y
@@ -54,49 +40,48 @@ def prtXYDl(text, x=0, y=0):
                     sys.stdout.flush()
                 time.sleep(.03)     	
             x = x+lenPLV
+            prtXY('║', TERM[0], TERM[1]-(4-l))
         else:
-            prtXY('║', TERM[0], TERM[1]-(4))
             y += 1
             l += 1
             x = safeX
             if l == 3:
                 l = 0
                 y = safeY
-                input()
+                nextDl()
+                drawFrame(0, TERM[1]-6, TERM[0], 6, 1)
 
-    prtXY('║', TERM[0], TERM[1]-(4))
-
-def drawFrame(x, y, w, h):
-    txtF = '╔' + '═'*(w-2) + '╗'
-    time.sleep(.03)
+def drawFrame(x, y, w, h, prt1=0, dl=.02):
+    txtF =  '╔' + '═'*(w-2) + '╗'
+    txtL =  '║' + ' '*(w-2) + '║'
     txtF1 = '╚' + '═'*(w-2) + '╝'
-    time.sleep(.03)
-    txtL = '║' + ' '*(w-2) + '║'
-    prtXY(txtF, x+1, y+1)
+    if prt1 == 0: 
+        prtXY(txtF, x+1, y+1)
     for i in range(0, h-2):
-        time.sleep(.03)
+        time.sleep(dl)
         prtXY(txtL ,x+1, y+i+2)
+        time.sleep(dl)
     prtXY(txtF1, (x+1), (y+h))
 
 #
 # CAIXA DE DIALOGO
 #
 
-def wNome(q, cln=0):
-    # Escreve nome
-    q = "| "+q+' |'
-    q = q + '═'*(TERM[0]-(len(q)+cln)-4) + '╗'
-    prtXY(q, 4, TERM[1]-5)
+def nextDl():
+    prtXY('\/ ║', TERM[0]-3, TERM[1]-1)
+    KB.wait('enter')
 
 def write(q, f, cln=0):
-    wNome(q, cln)
-
+    q = "| "+q+' |'
+    q = q + '═'*(TERM[0]-(len(q)+cln)-4) + '╗'
+    
+    prtXY(q, 4, TERM[1]-5)
     #escreve a fala
     fPalavras = f.split(' ')
-    prtXYDl(fPalavras, 5, TERM[1]-4)
+    wirteOnBox(fPalavras, 5, TERM[1]-4)
     # Sair e limpar quadro
     #KB.wait('enter')
-    input()
+    nextDl()
     drawFrame(0, TERM[1]-6, TERM[0], 6)
 
 def textColor(text, color):

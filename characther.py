@@ -1,4 +1,5 @@
 import funcs as FN
+import menu as MN
 
 def showList(lista):
     for i in range(0, len(lista)):
@@ -32,16 +33,27 @@ class Characther:
 
     def charactherCreator(self):
         FN.cls()
+        print('Crie seu personagem')
         self.name = input("Digite o nome do jogador:")
+        
         FN.cls()
-        showList(list_power)
-        self.typepower = int(input(f"Selecione entre os poderes da lista: "))
+        mn = MN.menu(list_power, 2, 2)
+        mn.draw()
+        MN.wait('space')
+        self.typepower = mn.ans
+        
         FN.cls()
-        showList(pltype_list)
-        self.type = int(input(f"Qual tipo de personagem você é:"))
+        mn1 = MN.menu(pltype_list, 2, 2)
+        mn1.draw()
+        MN.wait('space')
+        self.type = mn1.ans
+        
         FN.cls()
-        showList(list_arpon)
-        self.arpon = int(input(f"Que tipo de arma o seu personagem usa:"))
+        mn2 = MN.menu(list_arpon, 2, 2)
+        mn2.draw()
+        MN.wait('space')
+        self.arpon = mn2.ans
+        
         FN.cls()
 
         match self.type:

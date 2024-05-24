@@ -23,7 +23,7 @@ O jogador assume o papel de um herói destinado a encontrar o Rei Aric IV e rest
 Durante a jornada, o jogador enfrentará reviravoltas inesperadas e terá que tomar decisões difíceis que afetarão o rumo da história e o destino do reino. Essas escolhas morais podem influenciar as alianças do jogador, determinar o destino de personagens importantes e moldar o final da história.
 
 ### Conclusão:
-À medida que o jogador avança na jornada, eles descobrem segredos antigos, enfrentam desafios heróicos e, finalmente, descobrem a verdade por trás do desaparecimento do Rei Aric IV. No final, o destino do reino está nas mãos do jogador, e sua escolha determinará se a luz triunfará sobre as trevas ou se o reino cairá na escuridão eterna.
+A medida que o jogador avança na jornada, eles descobrem segredos antigos, enfrentam desafios heróicos e, finalmente, descobrem a verdade por trás do desaparecimento do Rei Aric IV. No final, o destino do reino está nas mãos do jogador, e sua escolha determinará se a luz triunfará sobre as trevas ou se o reino cairá na escuridão eterna.
 
 Essa é apenas uma estrutura básica para a história do jogo. Você pode expandir e personalizar cada elemento para criar uma experiência única e envolvente para os jogadores.
 

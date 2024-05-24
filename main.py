@@ -1,6 +1,7 @@
 import os, p1, funcs
 import characther as CH
 import cursor as CUR
+import menu as MN
 CUR.hide()
 
 def readSave():
@@ -16,9 +17,11 @@ def main():
     funcs.cls()
     CUR.show()
     if os.path.isfile('./save'):
-        c = int(input('[ 0 ] Não\n[ 1 ] Sim\nDeseja continuar da onde seu save? '))
         CUR.hide()
-        if c != 0:
+        mn = MN.menu(['Continuar save', 'Recomeçar'], 2, 2)
+        mn.draw()
+        MN.wait('enter')
+        if mn.ans == 0:
             funcs.cls()
             readSave()
         else:

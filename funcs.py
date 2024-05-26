@@ -1,6 +1,8 @@
-import os, sys, time, keyboard as KB
+import os, sys, time, keyboard as KB, cursor as CUR
 
 TERM = os.get_terminal_size() # [coll(w), lines(h)] 
+show = CUR.show
+hide = CUR.hide
 
 listColors = {
     'title': '\033[1;97m',
@@ -15,7 +17,7 @@ listColors = {
 }
   
 def prtXY(text, x=0, y=0):
-    sys.stdout.write("\033[{};{}H".format(y, x))
+    sys.stdout.write(f"\033[{y};{x}H")
     sys.stdout.write("\033[K")
     sys.stdout.write(text)
     sys.stdout.flush()
@@ -38,7 +40,7 @@ def wirteOnBox(text, x=0, y=0):
                 else:
                     print(palavra[i], end='')
                     sys.stdout.flush()
-                time.sleep(.03)     	
+                time.sleep(.04)     	
             x = x+lenPLV
             prtXY('║', TERM[0], TERM[1]-(4-l))
         else:
@@ -79,8 +81,6 @@ def write(q, f, cln=0):
     #escreve a fala
     fPalavras = f.split(' ')
     wirteOnBox(fPalavras, 5, TERM[1]-4)
-    # Sair e limpar quadro
-    #KB.wait('enter')
     nextDl()
     drawFrame(0, TERM[1]-6, TERM[0], 6)
 

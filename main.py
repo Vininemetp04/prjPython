@@ -1,8 +1,6 @@
-import os, p1, funcs
+import os, p1, funcs as FN
 import characther as CH
-import cursor as CUR
 import menu as MN
-CUR.hide()
 
 def readSave():
     save = open('save','r')
@@ -14,18 +12,18 @@ def readSave():
         p1.start(pl)
 
 def main():
-    funcs.cls()
-    CUR.show()
+    FN.cls()
     if os.path.isfile('./save'):
-        CUR.hide()
-        mn = MN.menu(['Continuar save', 'Recomeçar'], 2, 2)
-        mn.draw()
+        mn = MN.menu(['Continuar save', 'Recomeçar'], 2, 2, "Bem Vindo de volta")
+        mn.draw(0)
         mn.wait()
-        if mn.ans == 0:
-            funcs.cls()
+        ans = mn.ans
+        mn.close()
+        if ans == 0:
+            FN.cls()
             readSave()
         else:
-            funcs.cls()
+            FN.cls()
             os.remove('./save')
             pl = CH.Characther()
             pl.charactherCreator()
@@ -33,9 +31,9 @@ def main():
     else:    
         pl = CH.Characther()
         pl.charactherCreator()
-        CUR.hide()
         p1.start(pl)
 
 if __name__ == "__main__":
     main()
-    CUR.show()
+    input("Precione enter para sair")
+    FN.cls()

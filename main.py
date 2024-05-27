@@ -1,3 +1,4 @@
+
 import os, p1, funcs as FN
 import characther as CH
 import menu as MN

@@ -24,6 +24,7 @@ def wirteOnBox(text, x=0, y=0):
     l = 0
     safeX = x
     safeY = y
+    dl = .04
     for plv in range(0, len(text)):
         palavra = text[plv] + ' '
 
@@ -38,7 +39,7 @@ def wirteOnBox(text, x=0, y=0):
                 else:
                     print(palavra[i], end='')
                     sys.stdout.flush()
-                time.sleep(.03)     	
+                time.sleep(dl)
             x = x+lenPLV
             prtXY('║', TERM[0], TERM[1]-(4-l))
         else:

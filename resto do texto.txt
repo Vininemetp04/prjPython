@@ -1,0 +1,65 @@
+Você irá atacar novamente:
+
+Opção 1: Combinar poderes com Merlim
+Você e Merlim combinam seus poderes mágicos para um ataque final, lançando uma onda de energia pura contra o Feiticeiro.
+Ele contra ataca, porém:
+Se opção 4 utilizada, você recua.
+
+Opção 3: Utilizar o Cajado da Ressurreição
+Você usa o Cajado da Ressurreição para curar seus aliados e reviver Aria (se ela estiver acompanhando) com HP completo.
+
+Opção 2 Executar um Ritual Ancestral
+Você e Merlim realizam um ritual ancestral, invocando o poder dos antigos para atacar o Feiticeiro com uma energia mística avassaladora, derrotando-o.
+
+Opção 4 Armazenar a Energia do Feiticeiro
+Você utiliza um artefato mágico para absorver a energia do Feiticeiro, revertendo seu próprio poder contra ele, causando uma explosão que o derrota.
+Você e seus amigos recebem 40 HP de dano.
+
+Fase Final da Batalha
+
+Feiticeiro Sombrio: "Vocês são mais fortes do que eu esperava, mas isso não é o suficiente para me derrotar!"
+
+Merlim: "É hora de acabar com isso, juntos!"
+
+Opção 1: Utilizar um Feitiço de Tempo
+Você lança um feitiço que manipula o tempo, congelando o Feiticeiro no lugar. Merlim então desferre um golpe final, derrotando-o enquanto ele está imobilizado.
+
+Opção 2 Ativar um Artefato Proibido
+Você usa um artefato proibido que encontrou em uma das aventuras anteriores. O artefato libera uma energia devastadora, obliterando o Feiticeiro e derrotando-o.
+
+Opção 3: Convocar Gandar para o golpe final
+Gandar usa sua magia sagrada para enfraquecer o Feiticeiro, permitindo que você desferir o golpe final com sua Espada Fantasma, derrotando-o.
+
+Conclusão da Batalha
+
+Com o Feiticeiro derrotado, você se aproxima da cela onde o Rei Aric IV está preso. Usando a chave que o Feiticeiro guardava, você abre a cela e liberta o Rei.
+
+Rei Aric IV: "Vocês salvaram o reino de Eldoria. Sou eternamente grato a todos vocês."
+
+Merlim: "Foi uma honra, Majestade. Agora, vamos retornar ao reino e restaurar a paz."
+
+Retorno ao Reino de Eldoria
+
+Com o Rei Aric IV salvo, vocês retornam ao Reino de Eldoria. A notícia da vitória se espalha rapidamente, e o povo celebra sua coragem e determinação.
+
+Rei Aric IV: "Por seus feitos heroicos, concedo a vocês as maiores honras do reino. Vocês são verdadeiros heróis de Eldoria."
+
+Vocês recebem recompensas em ouro, armas e itens raros. O reino está em paz novamente, mas novas aventuras sempre aguardam no horizonte.
+
+Merlim: "Descansem, amigos. Outras batalhas nos aguardam no futuro, mas por agora, aproveitemos a paz que conquistamos."
+
+
+Retorno ao Reino de Eldoria
+
+Com o Rei Aric IV salvo, vocês retornam ao Reino de Eldoria. A notícia da vitória se espalha rapidamente, e o povo celebra sua coragem e determinação.
+
+Rei Aric IV: "Por seus feitos heroicos, concedo a vocês as maiores honras do reino. Vocês são verdadeiros heróis de Eldoria."
+
+Vocês recebem recompensas em ouro, armas e itens raros. O reino está em paz novamente, mas novas aventuras sempre aguardam no horizonte.
+
+Merlim: "Descansem, amigos. Outras batalhas nos aguardam no futuro, mas por agora, aproveitemos a paz que conquistamos."
+
+
+Salvar progresso: Com o Rei Aric IV salvo e a paz restaurada, prepare-se para futuras aventuras no Reino de Eldoria.
+
+Fim do Capítulo 5

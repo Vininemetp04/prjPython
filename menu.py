@@ -5,6 +5,7 @@ class menu:
     def __init__(self, text, x, y, title=''):
         self.title = "╔| "+title+" |" if title!='' else '╔'
         self.CONFIRMA = "space"
+        self.CONFIRMA = "space"
         self.x = x
         self.y = y
         self.text = text

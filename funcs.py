@@ -75,6 +75,7 @@ def nextDl():
 
 def write(q, f, cln=0):
     drawFrame(0, TERM[1]-6, TERM[0], 6)
+    drawFrame(0, TERM[1]-6, TERM[0], 6)
     q = "| "+q+' |'
     q = q + '═'*(TERM[0]-(len(q)+cln)-4) + '╗'
     
@@ -92,9 +93,13 @@ def cls():
     os.system("cls" if os.name == "nt" else "clear")
 
 # def escolha():
+# def escolha():
 
     # opcoes_validas = ['1', '2', '3']  
+    # opcoes_validas = ['1', '2', '3']  
 
+    # while True:
+        # escolha = input("Escolha uma opção (1, 2 ou 3): ")
     # while True:
         # escolha = input("Escolha uma opção (1, 2 ou 3): ")
 
@@ -102,6 +107,12 @@ def cls():
             # return escolha  
         # else:
             # print("Escolha inválida. Por favor, escolha entre as opções 1, 2 ou 3.")
+        # if escolha in opcoes_validas:
+            # return escolha  
+        # else:
+            # print("Escolha inválida. Por favor, escolha entre as opções 1, 2 ou 3.")
 
+    # opcao_escolhida = escolha()
+    # print("Você escolheu a opção:", opcao_escolhida)
     # opcao_escolhida = escolha()
     # print("Você escolheu a opção:", opcao_escolhida)

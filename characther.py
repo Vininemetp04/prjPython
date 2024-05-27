@@ -11,6 +11,8 @@ class Characther:
         self.type = 0
         self.tesouro = None
         self.cl = 'white'
+        self.hp = 100
+        self.xp = 0
 
     def showType(self):
         return pltype_list[self.type]

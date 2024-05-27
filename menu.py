@@ -4,7 +4,7 @@ import funcs as FN
 class menu:
     def __init__(self, text, x, y, title=''):
         self.title = "╔| "+title+" |" if title!='' else '╔'
-        self.CONFIRMA = "enter"
+        self.CONFIRMA = "space"
         self.x = x
         self.y = y
         self.text = text

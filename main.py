@@ -1,4 +1,3 @@
-
 import os, p1, funcs as FN
 import characther as CH
 import menu as MN
@@ -36,6 +35,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-    input("Precione enter para sair")
-    os.remove("./__pycache__")
     FN.cls()
+    input("Precione enter para sair")
+    FN.cls()
+    #os.remove("./__pycache__")

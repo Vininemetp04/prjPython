@@ -21,7 +21,7 @@ def caverna_dos_bandidos(pl):
 # Iniciar o Capítulo 3
 caverna_dos_bandidos()
 
-def caverna_dos_bandidos():
+def caverna_dos_bandidos(pl):
     FN.write("", "A Rainha das Bruxas pede que você recupere um artefato roubado por bandidos que se escondem em uma caverna próxima.")
     FN.write("", "Esta missão secundária é crucial para obter mais informações sobre o paradeiro do Rei Aric IV.")
 
@@ -41,7 +41,7 @@ def caverna_dos_bandidos():
 # Iniciar o Capítulo 3
 caverna_dos_bandidos()
 
-def caverna_ladroes():
+def caverna_ladroes(pl):
     FN.write("", "Ao entrar na caverna dos ladrões, você nota que ela está completamente escura.")
     FN.write("", "Você tem duas opções:")
     FN.write("", "1. Seguir na escuridão.")

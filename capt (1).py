@@ -4,18 +4,15 @@ import random
 def capitulo4():
     # Inicializar variáveis
     aria_acompanhando = True  # Exemplo, alterar conforme a situação
-    player_hp = 100  # HP inicial do jogador
 
     def comer_pao(pl):
-        nonlocal player_hp
-        player_hp = 100
+        pl.hp = 100
         FN.write("", "Você comeu o pão e recuperou todo o seu HP!")
 
     def beber_agua(pl):
-        nonlocal player_hp
-        player_hp += 50
-        if player_hp > 100:
-            player_hp = 100
+        pl.hp += 50
+        if pl.hp > 100:
+            pl.hp = 100
         FN.write("", "Você bebeu a água e recuperou 50 HP!")
 
     def escolha_item(pl):

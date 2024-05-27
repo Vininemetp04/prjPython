@@ -8,8 +8,8 @@ def decidir_acompanhamento_aria(pl):
     Função para decidir se Aria acompanhará o jogador na jornada.
     """
     global aria_acompanhando
-    opeMenu = ["Sim, Aria deve vir conosco.", "Não, Aria deve ficar no reino."]
     
+    opeMenu = ["Sim, Aria deve vir conosco.", "Não, Aria deve ficar no reino."]
     menu = MN.menu(opeMenu, 2, 2, "Você gostaria que Aria acompanhasse você na jornada?")
     menu.draw(0)
     menu.wait()

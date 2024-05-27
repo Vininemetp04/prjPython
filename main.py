@@ -1,31 +1,48 @@
-import os, p1, funcs
+import os, funcs as FN
+import p1,p2
 import characther as CH
-import cursor as CUR
 import menu as MN
-CUR.hide()
 
 def readSave():
     save = open('save','r')
-    dado = save.read().split('!@#@!')
+    dado = save.read().split(';')
     pl = CH.Characther()
     pl.charactherCreatorFormSave(dado)
     print(f'Bem-vindo de volta {pl.showName()}')
-    if int(dado[7]) == 0:
-        p1.start(pl)
+    match pl.parte:
+        case '0':
+            p1.start(pl)
+        case '1':
+            p2.decidir_acompanhamento_aria(pl)
+        case '2':
+            p2.encontro_com_rainha_bruxa(pl)
+        case '3':
+            p2.encontro_com_rainha_bruxa2(pl)
+        case '4':
+            p2.encontrar_driade(pl)
+        case '5':
+            p2.encontrar_lyra(pl)
+        case '6':
+            p2.iniciar_combate_lyra(pl)
+        case '6.1':
+            print('WIP')
+        case '7':
+            print('WIP')
+            #p2.(pl)
 
 def main():
-    funcs.cls()
-    CUR.show()
+    FN.cls()
     if os.path.isfile('./save'):
-        CUR.hide()
-        mn = MN.menu(['Continuar save', 'Recomeçar'], 2, 2)
-        mn.draw()
+        mn = MN.menu(['Continuar save', 'Recomeçar'], 2, 2, "Bem Vindo de volta")
+        mn.draw(0)
         mn.wait()
-        if mn.ans == 0:
-            funcs.cls()
+        ans = mn.ans
+        mn.close()
+        if ans == 0:
+            FN.cls()
             readSave()
         else:
-            funcs.cls()
+            FN.cls()
             os.remove('./save')
             pl = CH.Characther()
             pl.charactherCreator()
@@ -33,9 +50,11 @@ def main():
     else:    
         pl = CH.Characther()
         pl.charactherCreator()
-        CUR.hide()
         p1.start(pl)
 
 if __name__ == "__main__":
     main()
-    CUR.show()
+    # FN.cls()
+    input("Precione enter para sair")
+    FN.cls()
+    #os.remove("./__pycache__")

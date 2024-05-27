@@ -1,10 +1,7 @@
 import funcs as FN
 import menu as MN
 import time
-
-def showList(lista):
-    for i in range(0, len(lista)):
-        print(f"[ {i} ] {lista[i]}")
+import os
 
 class Characther:
     def __init__(self):
@@ -15,6 +12,9 @@ class Characther:
         self.type = 0
         self.tesouro = None
         self.cl = 'white'
+        self.hp = 100
+        self.xp = 0
+        self.parte = 0
 
     def showType(self):
         return pltype_list[self.type]
@@ -22,8 +22,14 @@ class Characther:
     def showName(self):
         return FN.textColor(self.name, self.cl)
 
+    def save(self):
+        if os.path.isfile('./save'):
+            os.remove('./save')
+        save = open('./save', 'x')
+        save.write(f"{self.name};{self.typepower};{self.power};{self.arpon};{self.type};{self.tesouro};{self.cl};{self.hp};{self.xp};{self.parte}")
+
     def charactherCreatorFormSave(self, dados):
-        # 0 name| 1 typepower | 2 power | 3 arpon | 4 type | 5 tesouro | 6 cl
+        # 0 name| 1 typepower | 2 power | 3 arpon | 4 type | 5 tesouro | 6 cl | 7 hp | 8 xp | 9 parte
         self.name = dados[0]
         self.typepower = int(dados[1])
         self.power = int(dados[2])
@@ -31,6 +37,10 @@ class Characther:
         self.type = int(dados[4])
         self.tesouro = dados[5]
         self.cl = dados[6]
+        self.hp = dados[7]
+        self.xp = dados[8]
+        self.parte = dados[9]
+        return self.parte
 
     def charactherCreator(self):
         FN.cls()
@@ -38,22 +48,25 @@ class Characther:
         self.name = input("Digite o nome do jogador:").strip()
         
         FN.cls()
-        mn = MN.menu(list_power, 2, 2)
-        mn.draw()
+        mn = MN.menu(list_power, 2, 2, 'Poder')
+        mn.draw(0)
         mn.wait()
         self.typepower = mn.ans
+        mn.close()
         
         FN.cls()
-        mn1 = MN.menu(pltype_list, 2, 2)
-        mn1.draw()
+        mn1 = MN.menu(pltype_list, 2, 2, "Tipo")
+        mn1.draw(0)
         mn1.wait()
         self.type = mn1.ans
+        mn1.close()
         
         FN.cls()
-        mn2 = MN.menu(list_arpon, 2, 2)
-        mn2.draw()
+        mn2 = MN.menu(list_arpon, 2, 2, "Arma")
+        mn2.draw(0)
         mn2.wait()
         self.arpon = mn2.ans
+        mn2.close()
         
         FN.cls()
 
@@ -73,10 +86,8 @@ class Characther:
 
         print(f"Olá {self.showName()} o {self.showType()} seja bem-vindo ao jogo!")
         time.sleep(1)
-        save = open('./save', 'x')
-        save.write(f"{self.name}!@#@!{self.typepower}!@#@!{self.power}!@#@!{self.arpon}!@#@!{self.type}!@#@!{self.tesouro}!@#@!{self.cl}!@#@!0")
+        self.save()
         
-
 list_power = [
     FN.textColor('Magia', 'cyan'),
     'Físico', 

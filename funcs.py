@@ -1,6 +1,8 @@
-import os, sys, time, keyboard as KB
+import os, sys, time, keyboard as KB, cursor as CUR
 
 TERM = os.get_terminal_size() # [coll(w), lines(h)] 
+show = CUR.show
+hide = CUR.hide
 
 listColors = {
     'title': '\033[1;97m',
@@ -15,7 +17,7 @@ listColors = {
 }
   
 def prtXY(text, x=0, y=0):
-    sys.stdout.write("\033[{};{}H".format(y, x))
+    sys.stdout.write(f"\033[{y};{x}H")
     sys.stdout.write("\033[K")
     sys.stdout.write(text)
     sys.stdout.flush()
@@ -27,7 +29,6 @@ def wirteOnBox(text, x=0, y=0):
     dl = .04
     for plv in range(0, len(text)):
         palavra = text[plv] + ' '
-
         if len(palavra.split('\033')) != 1:
             lenPLV = len(palavra) -14
         else: lenPLV = len(palavra)
@@ -73,6 +74,8 @@ def nextDl():
     KB.wait('space')
 
 def write(q, f, cln=0):
+    drawFrame(0, TERM[1]-6, TERM[0], 6)
+    drawFrame(0, TERM[1]-6, TERM[0], 6)
     q = "| "+q+' |'
     q = q + '═'*(TERM[0]-(len(q)+cln)-4) + '╗'
     
@@ -80,8 +83,6 @@ def write(q, f, cln=0):
     #escreve a fala
     fPalavras = f.split(' ')
     wirteOnBox(fPalavras, 5, TERM[1]-4)
-    # Sair e limpar quadro
-    #KB.wait('enter')
     nextDl()
     drawFrame(0, TERM[1]-6, TERM[0], 6)
 
@@ -90,3 +91,28 @@ def textColor(text, color):
 
 def cls():
     os.system("cls" if os.name == "nt" else "clear")
+
+# def escolha():
+# def escolha():
+
+    # opcoes_validas = ['1', '2', '3']  
+    # opcoes_validas = ['1', '2', '3']  
+
+    # while True:
+        # escolha = input("Escolha uma opção (1, 2 ou 3): ")
+    # while True:
+        # escolha = input("Escolha uma opção (1, 2 ou 3): ")
+
+        # if escolha in opcoes_validas:
+            # return escolha  
+        # else:
+            # print("Escolha inválida. Por favor, escolha entre as opções 1, 2 ou 3.")
+        # if escolha in opcoes_validas:
+            # return escolha  
+        # else:
+            # print("Escolha inválida. Por favor, escolha entre as opções 1, 2 ou 3.")
+
+    # opcao_escolhida = escolha()
+    # print("Você escolheu a opção:", opcao_escolhida)
+    # opcao_escolhida = escolha()
+    # print("Você escolheu a opção:", opcao_escolhida)

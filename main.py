@@ -1,15 +1,34 @@
-import os, p1, funcs as FN
+import os, funcs as FN
+import p1,p2
 import characther as CH
 import menu as MN
 
 def readSave():
     save = open('save','r')
-    dado = save.read().split('!@#@!')
+    dado = save.read().split(';')
     pl = CH.Characther()
     pl.charactherCreatorFormSave(dado)
     print(f'Bem-vindo de volta {pl.showName()}')
-    if int(dado[7]) == 0:
-        p1.start(pl)
+    match pl.parte:
+        case '0':
+            p1.start(pl)
+        case '1':
+            p2.decidir_acompanhamento_aria(pl)
+        case '2':
+            p2.encontro_com_rainha_bruxa(pl)
+        case '3':
+            p2.encontro_com_rainha_bruxa2(pl)
+        case '4':
+            p2.encontrar_driade(pl)
+        case '5':
+            p2.encontrar_lyra(pl)
+        case '6':
+            p2.iniciar_combate_lyra(pl)
+        case '6.1':
+            print('WIP')
+        case '7':
+            print('WIP')
+            #p2.(pl)
 
 def main():
     FN.cls()
@@ -35,7 +54,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-    FN.cls()
+    # FN.cls()
     input("Precione enter para sair")
     FN.cls()
     #os.remove("./__pycache__")

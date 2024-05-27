@@ -3,7 +3,7 @@ import random
 import funcs as FN 
 import menu as MN
 
-def decidir_acompanhamento_aria():
+def decidir_acompanhamento_aria(pl):
     """
     Função para decidir se Aria acompanhará o jogador na jornada.
     """
@@ -25,11 +25,9 @@ def decidir_acompanhamento_aria():
             FN.write("Aria", "Aria: Entendo. Boa sorte em sua jornada. Que os Narradores estejam com vocês.")
             aria_acompanhando = False
             # Aria fica no reino
-
-# Chamar a função para a decisão de acompanhamento de Aria após as escolhas iniciais
-decidir_acompanhamento_aria()
-
-# Continuar a história com o encontro da Rainha das Bruxas
+    pl.parte = 2
+    pl.save()
+    encontro_com_rainha_bruxa(pl)
 
 def encontro_com_rainha_bruxa(pl):
     """
@@ -74,9 +72,11 @@ def encontro_com_rainha_bruxa(pl):
                 FN.write("", "Você e Merlim sofreram dano! Perderam 15 HP cada.")
                 pl.hp -= 15
                 # Subtrair HP do jogador e de Merlim
+    pl.parte = 3
+    pl.save()
+    encontro_com_rainha_bruxa2(pl)
 
-encontro_com_rainha_bruxa()
-def encontro_com_rainha_bruxa(pl):
+def encontro_com_rainha_bruxa2(pl):
     """
     Função para simular o encontro com a Rainha das Bruxas.
     """
@@ -109,6 +109,9 @@ def encontro_com_rainha_bruxa(pl):
     FN.write("Rainha das Bruxas", "Eu poderia fazer melhor",)
     FN.write("Rainha das Bruxas", "Ela solta uma risada. Bom, para que vocês consigam o que desejam, devem ir até a Floresta do Silêncio,")
     FN.write("Rainha das Bruxas", "lá encontrarão uma de minhas guardiãs e ela estará com o mapa até a caverna do Dragão das Trevas.")
+    pl.parte = 4
+    pl.save()
+    encontrar_driade(pl)
 
 def encontrar_driade(pl):
     FN.write("Narrador", "Os personagens continuam pela trilha da Lua Crescente, seguindo as instruções da Driade.")
@@ -124,6 +127,9 @@ def encontrar_driade(pl):
         FN.write("Driade", "Sigam pela trilha das estrelas à leste. Ela os aguardará na Clareira das Águas Tranquilas.")
     else:
         FN.write("Driade", "Seus corações parecem puros, mas o caminho até Lyra é perigoso. Siga a trilha da Lua Crescente ao oeste.")
+    pl.parte = 5
+    pl.save()
+    encontrar_lyra(pl)
 
 def encontrar_lyra(pl):
     """
@@ -149,7 +155,10 @@ def encontrar_lyra(pl):
         FN.write("", "Vocês ganham o mapa e 10 pontos de experiência!")
     elif escolha == 2:
         FN.write("Lyra", "Se é um combate que desejam, assim seja.")
+        pl.parte = 6
         iniciar_combate_lyra()
+    pl.parte = 7
+    pl.save()
 
 def iniciar_combate_lyra(pl):
     FN.write("", "Você decide entrar em combate com Lyra.")
@@ -175,3 +184,5 @@ def iniciar_combate_lyra(pl):
     elif escolha_combate == 2:
         FN.write("", "Você decide fugir do combate.")
         FN.write("", "Lyra deixa vocês partirem, mas com uma advertência.")
+    pl.parte = 6.1
+    pl.save()

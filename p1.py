@@ -2,6 +2,7 @@ import time
 import funcs as FN 
 import menu as MN
 import menu as MN
+from p2 import decidir_acompanhamento_aria
 
 ATRASO = 1.2
 
@@ -68,3 +69,5 @@ def start(pl):
             FN.write("Narrador: ", "Você e Merlim foram atacados por bandidos nas proximidades!")
             FN.write("Aria", "Se essa é sua atitude, terão que enfrentar as consequências. Defendam-se!")
             # Iniciar batalha ou causar dano ao jogador
+    pl.parte = 1
+    decidir_acompanhamento_aria(pl)

@@ -70,4 +70,5 @@ def start(pl):
             FN.write("Aria", "Se essa é sua atitude, terão que enfrentar as consequências. Defendam-se!")
             # Iniciar batalha ou causar dano ao jogador
     pl.parte = 1
+    pl.save()
     decidir_acompanhamento_aria(pl)

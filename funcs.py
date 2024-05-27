@@ -26,9 +26,9 @@ def wirteOnBox(text, x=0, y=0):
     l = 0
     safeX = x
     safeY = y
+    dl = .04
     for plv in range(0, len(text)):
         palavra = text[plv] + ' '
-
         if len(palavra.split('\033')) != 1:
             lenPLV = len(palavra) -14
         else: lenPLV = len(palavra)
@@ -40,7 +40,7 @@ def wirteOnBox(text, x=0, y=0):
                 else:
                     print(palavra[i], end='')
                     sys.stdout.flush()
-                time.sleep(.04)     	
+                time.sleep(dl)     	
             x = x+lenPLV
             prtXY('║', TERM[0], TERM[1]-(4-l))
         else:
@@ -71,7 +71,7 @@ def drawFrame(x, y, w, h, prt1=0, dl=.02):
 
 def nextDl():
     prtXY('\/ ║', TERM[0]-3, TERM[1]-1)
-    KB.wait('space')
+    KB.wait('enter')
 
 def write(q, f, cln=0):
     q = "| "+q+' |'

@@ -36,4 +36,5 @@ def main():
 if __name__ == "__main__":
     main()
     input("Precione enter para sair")
+    os.remove("./__pycache__")
     FN.cls()

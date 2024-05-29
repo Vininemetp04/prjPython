@@ -27,6 +27,7 @@ class Characther:
             os.remove('./save')
         save = open('./save', 'x')
         save.write(f"{self.name};{self.typepower};{self.power};{self.arpon};{self.type};{self.tesouro};{self.cl};{self.hp};{self.xp};{self.parte}")
+        save.close()
 
     def charactherCreatorFormSave(self, dados):
         # 0 name| 1 typepower | 2 power | 3 arpon | 4 type | 5 tesouro | 6 cl | 7 hp | 8 xp | 9 parte

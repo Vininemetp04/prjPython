@@ -6,27 +6,28 @@ import menu as MN
 def readSave():
     save = open('save','r')
     dado = save.read().split(';')
+    save.close()
     pl = CH.Characther()
     pl.charactherCreatorFormSave(dado)
     print(f'Bem-vindo de volta {pl.showName()}')
     match pl.parte:
-        case '0':
+        case 0:
             p1.start(pl)
-        case '1':
+        case 1:
             p2.decidir_acompanhamento_aria(pl)
-        case '2':
+        case 2:
             p2.encontro_com_rainha_bruxa(pl)
-        case '3':
+        case 3:
             p2.encontro_com_rainha_bruxa2(pl)
-        case '4':
+        case 4:
             p2.encontrar_driade(pl)
-        case '5':
+        case 5:
             p2.encontrar_lyra(pl)
-        case '6':
+        case 6:
             p2.iniciar_combate_lyra(pl)
-        case '6.1':
+        case 6.1:
             print('WIP')
-        case '7':
+        case 7:
             print('WIP')
             #p2.(pl)
 

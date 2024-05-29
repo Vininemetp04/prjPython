@@ -40,7 +40,7 @@ def start(pl):
     match ans:
         case 0:
             FN.write("Aria", "Vejo que suas intenções são nobres. Eu ajudarei vocês. Aqui, aceite esta poção de cura.")
-            FN.write("", "Você recebeu uma Poção de Cura!")
+            FN.write("Narrador", "Você recebeu uma Poção de Cura!")
             # Adiciona item de cura ao inventário do jogador
         case 1:
             FN.write("Aria", "Vejo que estão com pressa. Vamos direto ao ponto. Cuidado, a jornada será perigosa.")

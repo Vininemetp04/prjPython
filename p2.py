@@ -119,14 +119,20 @@ def encontrar_driade(pl):
     FN.write("Driade", "Quem ousa pisar em meus frutos?")
     FN.write("Narrador", "Os personagens ficam em silêncio, cautelosos.")
     FN.write("Driade", "Eu os escuto, como escuto tudo que ocorre em minha floresta.")
-    resposta = input("Merlim: Nos perdoe, estamos em busca de uma feiticeira, Lyra, que vive aqui na floresta. Qual o motivo de sua busca? ")
+    FN.write("Merlim", "Nos perdoe, estamos em busca de uma feiticeira, Lyra, que vive aqui na floresta. Qual o motivo de sua busca?")
 
-    if "ajuda" in resposta or "perigo" in resposta:
+
+    menu = MN.menu(["Ajuda", "Equilíbrio"], 2, 2, "O motivo da sua Busca: ")
+    menu = draw(0)
+    menu.wait()
+    resp = menu.ans
+    menu.close()
+
+    if resp == 0:
         FN.write("Driade", "Seus motivos parecem sinceros. Sigam para o sul até o Vale Esmeralda. Lá encontrarão Lyra.")
-    elif "equilíbrio" in resposta or "natureza" in resposta:
+    elif resp == 1:
         FN.write("Driade", "Sigam pela trilha das estrelas à leste. Ela os aguardará na Clareira das Águas Tranquilas.")
-    else:
-        FN.write("Driade", "Seus corações parecem puros, mas o caminho até Lyra é perigoso. Siga a trilha da Lua Crescente ao oeste.")
+
     pl.parte = 5
     pl.save()
     encontrar_lyra(pl)
@@ -148,11 +154,11 @@ def encontrar_lyra(pl):
 
     if escolha == 0:
         FN.write("Lyra", "Lamento, mas não posso ajudá-los nesse assunto.")
-        FN.write("", "Lyra desaparece diante de vocês, deixando-os sem ajuda.")
+        FN.write("Narrador", "Lyra desaparece diante de vocês, deixando-os sem ajuda.")
     elif escolha == 1:
         FN.write("Lyra", "Vejo que vocês têm boas intenções. Aqui está o mapa até a caverna dos Ladrões.")
         pl.xp += 10  # Ganha 10 XP
-        FN.write("", "Vocês ganham o mapa e 10 pontos de experiência!")
+        FN.write("Narrador", "Vocês ganham o mapa e 10 pontos de experiência!")
     elif escolha == 2:
         FN.write("Lyra", "Se é um combate que desejam, assim seja.")
         pl.parte = 6
@@ -161,7 +167,7 @@ def encontrar_lyra(pl):
     pl.save()
 
 def iniciar_combate_lyra(pl):
-    FN.write("", "Você decide entrar em combate com Lyra.")
+    FN.write("Narrador", "Você decide entrar em combate com Lyra.")
     FN.write("Lyra", "Preparem-se para enfrentar minha magia!")
     
     ope = ["Atacar Lyra", "Merlim interrompe", "Fugir"]

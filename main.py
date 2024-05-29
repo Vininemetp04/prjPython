@@ -10,7 +10,7 @@ def readSave():
     pl = CH.Characther()
     pl.charactherCreatorFormSave(dado)
     print(f'Bem-vindo de volta {pl.showName()}')
-    match pl.parte:
+    match int(pl.parte):
         case 0:
             p1.start(pl)
         case 1:

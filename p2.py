@@ -19,11 +19,11 @@ def decidir_acompanhamento_aria(pl):
     match escolha_acompanhamento:
         case 0:
             FN.write("Aria", "Aria: Eu irei com vocês e usarei minhas habilidades para proteger nosso grupo contra inimigos à distância.")
-            aria_acompanhando = True
+            pl.aria = True
             # Aria acompanha o grupo
         case 1:
             FN.write("Aria", "Aria: Entendo. Boa sorte em sua jornada. Que os Narradores estejam com vocês.")
-            aria_acompanhando = False
+            pl.aria = False
             # Aria fica no reino
     pl.parte = 2
     pl.save()
@@ -33,12 +33,12 @@ def encontro_com_rainha_bruxa(pl):
     """
     Função para simular o encontro com a Rainha das Bruxas.
     """
-    FN.write("", "Você e Merlim chegam à morada da Rainha das Bruxas. A atmosfera é sombria e cheia de mistério.")
-    FN.write("", "De repente, vocês são surpreendidos por um grupo de Ratos Mutantes que atacam ferozmente!")
+    FN.write("Narrador", "Você e Merlim chegam à morada da Rainha das Bruxas. A atmosfera é sombria e cheia de mistério.")
+    FN.write("Narrador", "De repente, vocês são surpreendidos por um grupo de Ratos Mutantes que atacam ferozmente!")
     
     opeMenu = ["Utilizar um feitiço de Merlim", "Se esconder atrás dos barris"]
 
-    if aria_acompanhando:
+    if pl.aria:
         opeMenu.append("Colocar Aria para atirar nos ratos")
     else:
         opeMenu.append("Tentar distrair os ratos")
@@ -123,7 +123,7 @@ def encontrar_driade(pl):
 
 
     menu = MN.menu(["Ajuda", "Equilíbrio"], 2, 2, "O motivo da sua Busca: ")
-    menu = draw(0)
+    menu.draw(0)
     menu.wait()
     resp = menu.ans
     menu.close()

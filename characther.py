@@ -15,6 +15,7 @@ class Characther:
         self.hp = 100
         self.xp = 0
         self.parte = 0
+        self.aria = True
 
     def showType(self):
         return pltype_list[self.type]
@@ -26,7 +27,7 @@ class Characther:
         if os.path.isfile('./save'):
             os.remove('./save')
         save = open('./save', 'x')
-        save.write(f"{self.name};{self.typepower};{self.power};{self.arpon};{self.type};{self.tesouro};{self.cl};{self.hp};{self.xp};{self.parte}")
+        save.write(f"{self.name};{self.typepower};{self.power};{self.arpon};{self.type};{self.tesouro};{self.cl};{self.hp};{self.xp};{self.parte};{self.aria}")
         save.close()
 
     def charactherCreatorFormSave(self, dados):
@@ -40,7 +41,8 @@ class Characther:
         self.cl = dados[6]
         self.hp = dados[7]
         self.xp = dados[8]
-        self.parte = dados[9]
+        self.parte = int(dados[9])
+        self.aria = bool(dados[10])
         return self.parte
 
     def charactherCreator(self):
